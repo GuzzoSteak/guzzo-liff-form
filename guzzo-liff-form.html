@@ -16,7 +16,7 @@
       } else {
         const profile = await liff.getProfile();
         const userId = profile.userId;
-        const formBase = "https://docs.google.com/forms/d/e/1FAIpQLScCBVq61wGblBGND9yshg3JX9AS2QG04sUuE1UE1r1vDOgO5g/viewform";
+        const formBase = "https://docs.google.com/forms/d/e/1FAIpQLSc6yApKefT3ti8QpGSMVUgGeTb2f4whEVeAH6w7sEnendV0pg/viewform";
         const entryParam = "entry.2017893460"; // ช่อง LineUserId
 
         const redirectUrl = `${formBase}?usp=pp_url&${entryParam}=${encodeURIComponent(userId)}`;
