@@ -1,30 +1,30 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-  <meta charset="utf-8">
-  <title>ลงทะเบียนรับคูปอง Guzzo Steak</title>
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guzzo Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    .form-container {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-  <h2>กำลังพาไปยังแบบฟอร์ม...</h2>
-  <script>
-    async function main() {
-      await liff.init({ withLoginOnExternalBrowser: true });
-      if (!liff.isLoggedIn()) {
-        liff.login();
-      } else {
-        const profile = await liff.getProfile();
-        const userId = profile.userId;
-        const formBase = "https://docs.google.com/forms/d/e/1FAIpQLSc6yApKefT3ti8QpGSMVUgGeTb2f4whEVeAH6w7sEnendV0pg/viewform";
-        const entryParam = "entry.2017893460"; // ช่อง LineUserId
-
-        const redirectUrl = `${formBase}?usp=pp_url&${entryParam}=${encodeURIComponent(userId)}`;
-        window.location.href = redirectUrl;
-      }
-    }
-
-    main();
-  </script>
+  <iframe 
+    class="form-container"
+    src="https://docs.google.com/forms/d/e/1FAIpQLSc6yApKefT3ti8QpGSMVUgGeTb2f4whEVeAH6w7sEnendV0pg/viewform?embedded=true"
+    frameborder="0"
+    allowfullscreen
+  >
+    กำลังโหลด…
+  </iframe>
 </body>
 </html>
