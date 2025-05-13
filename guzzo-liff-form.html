@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ลงทะเบียนรับคูปอง Guzzo Steak</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+  <h2>กำลังพาไปยังแบบฟอร์ม...</h2>
+  <script>
+    async function main() {
+      await liff.init({ withLoginOnExternalBrowser: true });
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      } else {
+        const profile = await liff.getProfile();
+        const userId = profile.userId;
+        const formBase = "https://docs.google.com/forms/d/e/1FAIpQLScCBVq61wGblBGND9yshg3JX9AS2QG04sUuE1UE1r1vDOgO5g/viewform";
+        const entryParam = "entry.2017893460"; // ช่อง LineUserId
+
+        const redirectUrl = `${formBase}?usp=pp_url&${entryParam}=${encodeURIComponent(userId)}`;
+        window.location.href = redirectUrl;
+      }
+    }
+
+    main();
+  </script>
+</body>
+</html>
